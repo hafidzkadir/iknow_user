@@ -148,7 +148,7 @@
 				});
 				
 			function getEmployeeList() {
-					var url='http://localhost/iknow_user/';
+					var url='http://192.168.0.108/iknow_user/';
 					$.getJSON(url+'services/getemployees.php', function(data) {
 						$('#employeeList li').remove();
 						employees = data.items;
