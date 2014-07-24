@@ -38,7 +38,7 @@
 		});
 		
 	function getEmployeeList() {
-			$.getJSON('http://localhost/iknow_user/services/getemployees.php', function(data) {
+			$.getJSON('http://192.168.0.108/iknow_user/services/getemployees.php', function(data) {
 				$('#employeeList li').remove();
 				employees = data.items;
 				$.each(employees, function(index, employee) {
@@ -60,7 +60,7 @@
 	}
 	
 	function getActivityList() {
-		$.getJSON('http://localhost/iknow_user/services/getactivity.php', function(data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getactivity.php', function(data) {
 			$('#activityList li').remove();
 			activities = data.items;
 			$.each(activities, function(index, activity) {
@@ -73,7 +73,7 @@
 	}
 	
 	function getCurrentList() {
-		$.getJSON('http://localhost/iknow_user/services/getmoto.php', function(data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getmoto.php', function(data) {
 			$('#motoList li').remove();
 			var motos = data.item;
 			$.each(motos, function(index, moto) {
@@ -87,7 +87,7 @@
 			$('#motoList').listview('refresh');
 		});
 		
-		$.getJSON('http://localhost/iknow_user/services/getcurrent.php', function(data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getcurrent.php', function(data) {
 			$('#currentList li').remove();
 			var currents = data.items;
 			$.each(currents, function(index, current) {
@@ -99,7 +99,7 @@
 			$('#currentList').listview('refresh');
 		});
 		
-		$.getJSON('http://localhost/iknow_user/services/getworker.php', function(data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getworker.php', function(data) {
 			$('#workerList li').remove();
 			var workers = data.item;
 			$.each(workers, function(index, worker) {
@@ -111,7 +111,7 @@
 			$('#workerList').listview('refresh');
 		});	
 		
-		$.getJSON('http://localhost/iknow_user/services/getcounter.php', function(data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getcounter.php', function(data) {
 			$('#counterList li').remove();
 			var counters = data.item;
 			$.each(counters, function(index, counter) {
@@ -124,7 +124,7 @@
 			$('#counterList').listview('refresh');
 		});	
 		
-		$.getJSON('http://localhost/iknow_user/services/getbirthday.php', function(data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getbirthday.php', function(data) {
 			$('#birthdayList li').remove();
 			var birthdays = data.item;
 			$.each(birthdays, function(index, birthday) {
@@ -191,12 +191,12 @@
 	
 	$('#detailsPage').live('pageshow', function(event) {
 		var nokp = getUrlVars()["nokp"];
-		$.getJSON('http://localhost/iknow_user/services/getemployee.php?nokp='+nokp, displayEmployee);
+		$.getJSON('http://192.168.0.108/iknow_user/services/getemployee.php?nokp='+nokp, displayEmployee);
 	});
 	
 	$('#descriptionsPage').live('pageshow', function(event) {
 		var nokp = getUrlVars()["nokp"];
-		$.getJSON('http://localhost/iknow_user/services/getemployee.php?nokp='+nokp, displayEmployee);
+		$.getJSON('http://192.168.0.108/iknow_user/services/getemployee.php?nokp='+nokp, displayEmployee);
 	});
 	
 	function displayEmployee(data) {
@@ -243,7 +243,7 @@
 	
 	$('#activityPage').live('pageshow', function(event) {
 		var id = getUrlVars()["id"];
-		$.getJSON('http://localhost/iknow_user/services/getactivity2.php?id='+id, displayActivity);
+		$.getJSON('http://192.168.0.108/iknow_user/services/getactivity2.php?id='+id, displayActivity);
 	});
 	
 	function displayActivity(data) {
@@ -269,7 +269,7 @@
 	$('#reportListPage').live('pageshow', function(event) {
 		var nokp = getUrlVars()["nokp"];
 		console.log("reports for " + nokp);
-		$.getJSON('http://localhost/iknow_user/services/getreports.php?nokp='+nokp, function (data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getreports.php?nokp='+nokp, function (data) {
 			var reports = data.items;
 			$.each(reports, function(index, employee) {
 				$('#reportList').append('<li><a href="employeedetails.html?nokp=' + employee.nokp + '" data-transition="flip">' +
@@ -287,7 +287,7 @@
 		var kod = getUrlVars()["kod"];
 		console.log("activities for " + kod);
 		
-		$.getJSON('http://localhost/iknow_user/services/getactivities.php?kod='+kod, function (data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getactivities.php?kod='+kod, function (data) {
 			var activities = data.items;
 			$.each(activities, function(index, activity) {
 				$('#activity2List').append('<li><a href="activitydetails.html?id=' + activity.id + '" data-transition="flip">' +
@@ -299,7 +299,7 @@
 	
 	$('#workerListPage').live('pageshow', function(event) {
 		
-		$.getJSON('http://localhost/iknow_user/services/getworker2.php', function (data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getworker2.php', function (data) {
 			var workers = data.item;
 			$.each(workers, function(index, worker) {
 				$('#bulan').text(ubah_bulan(worker.bulan));
@@ -320,7 +320,7 @@
 	
 	$('#counterListPage').live('pageshow', function(event) {
 		
-		$.getJSON('http://localhost/iknow_user/services/getcounter2.php', function (data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getcounter2.php', function (data) {
 			var counters = data.item;
 			$.each(counters, function(index, counter) {
 				$('#nama_hari').text(ubah_hari(counter.tahun,counter.bulan,counter.hari));
@@ -341,7 +341,7 @@
 	
 	$('#birthdayListPage').live('pageshow', function(event) {
 		
-		$.getJSON('http://localhost/iknow_user/services/getbirthday2.php', function (data) {
+		$.getJSON('http://192.168.0.108/iknow_user/services/getbirthday2.php', function (data) {
 			var birthdays = data.item;
 			$.each(birthdays, function(index, birthday) {
 				$('#bulan').text(ubah_bulan(birthday.bulan));
