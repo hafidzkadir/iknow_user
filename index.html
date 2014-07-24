@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Kiosk BPPs</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<!-- Splash screen -->
+		<!--div data-role="page" id="splash"> 
+			<img id="splash-bg" src="images/splash/bg.jpg" alt="splash image"/>
+			<img id="splash-title" src="images/splash/logo_bpps.png" alt="splash title" />
+		</div--> 
+		<!-- end splash screen -->
+		<div id="employeeListPage" data-role="page">
+			<div data-role="header" data-position="fixed"><h1>Direktori</h1></div>
+			<div data-role="content"><ul id="employeeList" data-role="listview" data-filter="true" data-filter-placeholder="Carian..."></ul></div>	
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-icon="home" class= "ui-btn-active ui-state-persist">Direktori</a></li>
+						<li><a data-icon="star" href="#activityListPage">Aktiviti</a></li>
+						<li><a data-icon="info" href="#currentListPage">Terkini</a></li>		
+						<li><a data-icon="gear" href="#infoListPage">Info</a></li>		
+					</ul>	
+				</div>
+			</div>
+		</div>
+		<div id="activityListPage" data-role="page">
+			<div data-role="header" data-position="fixed"><h1>Aktiviti</h1></div>
+			<div data-role="content"><ul id="activityList" data-role="listview" data-inset="true"></ul></div>	
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-icon="home" href="#employeeListPage">Direktori</a></li>
+						<li><a data-icon="star" class= "ui-btn-active ui-state-persist">Aktiviti</a></li>
+						<li><a data-icon="info" href="#currentListPage">Terkini</a></li>
+						<li><a data-icon="gear" href="#infoListPage">Info</a></li>						
+					</ul>	
+				</div>
+			</div>			
+		</div>
+		<div id="currentListPage" data-role="page">
+			<div data-role="header" data-position="fixed"><h1>Terkini</h1></div>
+			<div data-role="content">
+				<div align='center'><b><p id="currentWeek"></p></b></div>
+				<div align='center'><b><p id="currentDays"></p></b></div>
+				<ul id="motoList" data-role="listview" data-inset="true"></ul>
+				<ul id="currentList" data-role="listview" data-inset="true"></ul>
+				<ul id="workerList" data-role="listview" data-inset="true"></ul>
+				<ul id="counterList" data-role="listview" data-inset="true"></ul>
+				<ul id="birthdayList" data-role="listview" data-inset="true"></ul>
+			</div>	
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-icon="home" href="#employeeListPage" >Direktori</a></li>
+						<li><a data-icon="star" href="#activityListPage">Aktiviti</a></li>
+						<li><a data-icon="info" class= "ui-btn-active ui-state-persist">Terkini</a></li>
+						<li><a data-icon="gear" href="#infoListPage">Info</a></li>						
+					</ul>	
+				</div>
+			</div>			
+		</div>
+		<div id="infoListPage" data-role="page">
+			<div data-role="header" data-position="fixed"><h1>Info Aplikasi</h1></div>
+			<div data-role="content">
+				<div align="center"><br/><img src="images/info/logo_iknow.jpg" /></div><br/>
+				<div align="center" style="padding-left:14px"><br/>
+					Aplikasi telefon pintar ini telah dibangunkan secara proaktif dan melibatkan warga Bahagian Pengurusan Psikologi, JPA sepenuhnya.<br/><br/>
+					Sebarang pertanyaan boleh diajukan terus melalui talian rasmi <b>03-83164421</b>.
+				</div>
+				<br/><div align="center" style="font-size:16px;"><a href="#creditListPage" data-transition="pop" data-role="button"><b>Kredit</b></a></div>
+			</div>	
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-icon="home" href="#employeeListPage">Direktori</a></li>
+						<li><a data-icon="star" href="#activityListPage">Aktiviti</a></li>
+						<li><a data-icon="info" href="#currentListPage">Terkini</a></li>
+						<li><a data-icon="gear" class= "ui-btn-active ui-state-persist">Info</a></li>						
+					</ul>	
+				</div>
+			</div>			
+		</div>
+		<div id="creditListPage" data-role="page">
+			<div data-role="header" data-position="fixed"><h1>Kredit Aplikasi</h1></div>
+			<div data-role="content">
+				<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+				<div class="flex-container">
+					<div class="flexslider2" >
+						<ul class="slides" >
+							<li><img src="images/info/profil_sharifah.jpg" /></li>
+							<li><img src="images/info/profil_hafidz.jpg" /></li>
+						</ul>
+					</div>	
+				</div>
+			</div>	
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul><li><a data-icon="delete" href="#infoListPage">Tutup Ruangan Ini</a></li></ul>	
+				</div>
+			</div>			
+		</div>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.mobile-1.3.2.js"></script>
+		<script src="js/jquery.flexslider.js"></script>
+		<script src="js/controller.js"></script>
+	</body>
+</html>
