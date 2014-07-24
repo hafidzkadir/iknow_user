@@ -148,7 +148,8 @@
 				});
 				
 			function getEmployeeList() {
-					$.getJSON('http://localhost/iknow_user/services/getemployees.php', function(data) {
+					var url='http://localhost/iknow_user/';
+					$.getJSON(url+'services/getemployees.php', function(data) {
 						$('#employeeList li').remove();
 						employees = data.items;
 						$.each(employees, function(index, employee) {
